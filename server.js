@@ -33,7 +33,7 @@ app.get('/api/notes', (req, res) => {
 })
 app.post('/api/notes', (req, res) => {
   const randomID = Math.floor((1 + Math.random()) * 100)
-    
+
   const newNote = { ...req.body, id: randomID }
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) {
@@ -62,21 +62,17 @@ app.delete('/api/notes/:id', (req, res) => {
       return res.status(500).send('Error reading notes file');
     }
     let notes = JSON.parse(data);
-    // for (let index = 0; index < notes.length; index++) {
-    //   const removeNotes = notes[index];
-    //   if (removeNotes.id == deleteNotes) {
-    //     notes = notes.splice(index, 1);
-    //     console.log(notes);
-    //   }
-      let filteredNotes = notes.filter((note)=> {
-        console.log(note.id, deleteNotes);
-       return note.id != deleteNotes})
-  console.log(filteredNotes);
+
+    let filteredNotes = notes.filter((note) => {
+      console.log(note.id, deleteNotes);
+      return note.id != deleteNotes
+    })
+    console.log(filteredNotes);
 
     fs.writeFile('./db/db.json', JSON.stringify(filteredNotes), (err) => {
       if (!err) {
         res.json(JSON.stringify(filteredNotes));
-        
+
       }
     })
   })
