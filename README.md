@@ -12,7 +12,25 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 
 
-## Deployment and Video Link 
+## Deployment 
+
+
+https://notetaker-6ecf.onrender.com/notes
+
+
+
+## Assets
+
+
+The following images demonstrates the web application's appearance and functionality:
+
+
+
+![screenshot](/images/notetaker-6ecf.onrender.com_.png)
+
+
+![screenshot](/images/notetaker-6ecf.onrender.com_notes.png)
+
 
 
 
@@ -59,6 +77,17 @@ WHEN I click on the "New Note" button in the navigation at the top of the page
 
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column and the button disappears
 
+
+
+## Resources 
+
+
+Evan Beck 
+
+Diego Jaia
+
+Andrew Layendecker
+  
 
 
 

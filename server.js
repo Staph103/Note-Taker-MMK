@@ -53,6 +53,7 @@ app.post('/api/notes', (req, res) => {
   })
 });
 
+//Delete call to remove the selected notes from the db.json and re-write the file to page 
 app.delete('/api/notes/:id', (req, res) => {
   console.log("hello", req.params.id);
   const deleteNotes = req.params.id;
@@ -67,7 +68,6 @@ app.delete('/api/notes/:id', (req, res) => {
       console.log(note.id, deleteNotes);
       return note.id != deleteNotes
     })
-    console.log(filteredNotes);
 
     fs.writeFile('./db/db.json', JSON.stringify(filteredNotes), (err) => {
       if (!err) {
@@ -77,6 +77,8 @@ app.delete('/api/notes/:id', (req, res) => {
     })
   })
 })
+
+//listens for the port
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
